@@ -22,6 +22,8 @@ public:
 
     T pop();
 
+    T peek();
+
     bool esVacia();
 };
 
@@ -84,6 +86,12 @@ T Pila<T>::pop() {
  * @tparam T
  * @return
  */
+template <class T>
+T Pila<T>::peek() {
+    if (NULL == inicio)
+        throw 404;
+    return inicio->getDato();
+}
 template<class T>
 bool Pila<T>::esVacia() {
     return inicio == NULL;
